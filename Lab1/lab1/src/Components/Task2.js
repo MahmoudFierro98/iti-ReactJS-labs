@@ -7,8 +7,9 @@ export default class Task2 extends Component {
         super();
         this.state = {
             imgNo: 1,
+            imgSrc: "./Images/1.jpg",
             slideInterval: 0,
-            imgSrc: "./Images/1.jpg"
+            slideFlag: false,
         }
     }
 
@@ -22,8 +23,11 @@ export default class Task2 extends Component {
     }
 
     getNext = () => {
-        if (this.state.imgNo >= 4)
-            this.state.imgNo = 4;
+        if (this.state.imgNo >= 4) 
+            if (this.state.slideFlag)
+                this.state.imgNo = 1;
+            else
+                this.state.imgNo = 4;
         else
             this.state.imgNo++;
         this.setState({ imgNo: this.state.imgNo });
@@ -31,10 +35,12 @@ export default class Task2 extends Component {
     }
 
     start = () => {
+        this.setState({ slideFlag: true });
         this.state.slideInterval = setInterval(this.getNext, 1000);
     }
 
     stop = () => {
+        this.setState({ slideFlag: false });
         clearInterval(this.state.slideInterval);
     }
 
