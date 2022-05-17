@@ -2,6 +2,9 @@
 
 ![screen-gif](./Lab1.gif)
 
+Fix Pervious and Next button \
+![screen-gif](./Lab1_fix.gif)
+
 ## Create new project "lab1"
 ```
 $ npx create-react-app lab1

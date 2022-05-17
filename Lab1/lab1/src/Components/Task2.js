@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import "../index.css";
 
 export default class Task2 extends Component {
 
@@ -13,7 +14,7 @@ export default class Task2 extends Component {
 
     getPervious = () => {
         if (this.state.imgNo <= 1)
-            this.state.imgNo = 4;
+            this.state.imgNo = 1;
         else
             this.state.imgNo--;
         this.setState({ imgNo: this.state.imgNo });
@@ -22,7 +23,7 @@ export default class Task2 extends Component {
 
     getNext = () => {
         if (this.state.imgNo >= 4)
-            this.state.imgNo = 1;
+            this.state.imgNo = 4;
         else
             this.state.imgNo++;
         this.setState({ imgNo: this.state.imgNo });
@@ -41,7 +42,7 @@ export default class Task2 extends Component {
         return (
             <div align="center">
                 <h1>Task 2</h1>
-                <img src={this.state.imgSrc} width='20%' />
+                <img src={this.state.imgSrc} className="task2" />
                 <br />
                 {this.state.imgNo}
                 <br />
