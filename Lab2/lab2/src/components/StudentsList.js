@@ -1,13 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 let StudentsList = ({ studentsList }) => {
-    console.log(studentsList);
-
     let renderStudents = () => {
         if (studentsList.length > 0) {
             return studentsList.map((student) => {
                 return (
-                    <div className="studentItem">
+                    <div key={student.id} className="studentItem">
                         <h3>Name: {student.name}</h3>
                         <h3>Age: {student.age}</h3>
                         <NavLink to={`students/${student.id}`}>View</NavLink>

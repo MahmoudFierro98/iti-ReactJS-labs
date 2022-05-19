@@ -10,7 +10,7 @@ let StudentsDetails = () => {
             if (Number(student.id) === Number(id)) {
                 flag = true;
                 return (
-                    <div className="studentItem">
+                    <div key={student.id} className="studentItem">
                         <h3>ID: {student.id}</h3>
                         <h3>Name: {student.name}</h3>
                         <h3>Age: {student.age}</h3>
